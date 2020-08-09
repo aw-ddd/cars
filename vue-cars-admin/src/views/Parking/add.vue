@@ -5,7 +5,7 @@
                 <el-input v-model="form.name"></el-input>
             </el-form-item>
             <el-form-item label="区域">
-                <el-cascader :props="props"></el-cascader>
+                <city-area :cityAreaValue.sync="form.cityArea"></city-area>
             </el-form-item>
             <el-form-item label="类型">
                 <el-radio v-model="form.radio" label="1">室内</el-radio>
@@ -37,17 +37,18 @@
 </template>
 <script>
     import Amap from "../amap/index";
-    import {GetCity} from "../../api/common";
+    import CityArea from "../../components/common/cityArea/index";
+
 
     export default {
         name: "ParkingAdd",
-        components: {Amap},
+        components: {CityArea, Amap},
         data() {
-            let id = 0;
             return {
                 form: {
                     name: '',
                     radio:'1',
+                    cityArea:'',
                     region: '',
                     date1: '',
                     date2: '',
@@ -56,25 +57,7 @@
                     resource: '',
                     desc: ''
                 },
-                //动态级联列表
-                props:{
-                    //开启懒加载
-                    lazy: true,
-                    lazyLoad (node, resolve) {
-                        console.log(node);
-                        const { level } = node;
-                        setTimeout(() => {
-                            const nodes = Array.from({ length: level + 1 })
-                                .map(item => ({
-                                    value: ++id,
-                                    label: `选项${id}`,
-                                    leaf: level >= 2
-                                }));
-                            // 通过调用resolve将子节点数据返回，通知组件数据加载完成
-                            resolve(nodes);
-                        }, 1000);
-                    }
-                }
+
             }
         },
         methods: {

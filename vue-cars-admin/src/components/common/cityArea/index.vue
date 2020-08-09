@@ -1,111 +1,86 @@
 <template>
-    <el-cascader v-model="value" :options="cascader_options" :props="cascader_props"
-                 @change="changeValue"></el-cascader>
+    <el-cascader v-model="areaValue"  :props="props" @change="changeValue"></el-cascader>
 </template>
 
 <script>
-    // API
-    // import { GetCity } from "@/api/common"
+    import {GetCity} from "../../../api/common";
     export default {
-        name: '',
-        data() {
-            const _this = this;
-            return {
-                address: [],
-                addressData: {},
-                value: "",
-                cascader_options: [],
-                cascader_props: {
+        name: "CityArea",
+        props:{
+            cityAreaValue:{
+                type:String,
+                default:''
+            }
+        },
+        data(){
+            return{
+                areaValue:'',
+                //动态级联列表
+                props:{
+                    //开启懒加载
                     lazy: true,
-                    lazyLoad(node, resolve) {
+                    lazyLoad (node, resolve) {
+                        console.log(node)
+                        //获取当前节点的level
                         const level = node.level;
-                        // 请求参数
-                        const requestData = {};
-                        // 声明自定义配置
-                        const jsonType = {
-                            0: {type: "province"},
-                            1: {type: "city", code: "province"},
-                            2: {type: "area", code: "city"}
+                        //定义数据
+                        const requestData = {}
+                        //判断，如果当前节点=0就获取“省”的数据
+                        if (level === 0){
+                            requestData.type = 'province'
+                        }
+                        //判断，如果当前节点=1就获取“区县”的数据
+                        if (level === 1){
+                            requestData.type = 'city'
+                            requestData.province_code = node.value
                         }
 
-                        if (jsonType[level].code) {
-                            requestData[`${jsonType[level].code}_code`] = node.value
+                        //判断，如果当前节点=2就获取“市”的数据
+                        if (level === 2){
+                            requestData.type = 'area'
+                            requestData.city_code = node.value
                         }
-                        // type
-                        requestData.type = jsonType[level].type;
-                        // 省市区的接口
-                        GetCity(requestData).then(resonse => {
-                            const data = resonse.data.data;
-                            // 类型
-                            const type = jsonType[level].type.toUpperCase();
-                            // 自定义value、label
-                            data.forEach(item => {
-                                item.value = item[`${type}_CODE`];
-                                item.label = item[`${type}_NAME`];
-                                // 最后一层选择
-                                if (level === 2) {
-                                    item.leaf = level >= 2;
-                                }
-                            })
-                            // 存储省市区数据
-                            _this.addressData[jsonType[level].type] = data;
-                            // 返回节点数据
-                            resolve(data);
+
+                        //发送异步请求获取数据
+                        GetCity(requestData).then(res=>{
+                            if (level === 0){
+                                res.data.data.forEach(item=>{
+                                    item.label = item.PROVINCE_NAME
+                                    item.value = item.PROVINCE_CODE
+                                })
+                            }
+                            if (level === 1){
+                                res.data.data.forEach(item=>{
+                                    item.label = item.CITY_NAME
+                                    item.value = item.CITY_CODE
+                                })
+                            }
+                            if (level === 2){
+                                res.data.data.forEach(item=>{
+                                    item.label = item.AREA_NAME
+                                    item.value = item.AREA_CODE
+                                    //停止继续查询数据
+                                    item.leaf = level >= 2
+                                })
+                            }
+                            console.log(res);
+                            resolve(res.data.data)
                         })
-                        // 获取address
-                        if (node.level !== 0) {
-                            _this.getAddress(node);
-                        }
+
                     }
                 }
             }
         },
-        methods: {
-            changeValue(value) {
-                this.$emit("update:cityAreaValue", value.join());
-                // 匹配最后一项，区县
-                const lastCode = value[value.length - 1];
-                const area = this.addressData.area.filter(item => item.value == lastCode)[0];
-                this.address[2] = area.label;
-                this.getAddress();
-            },
-            /** 获取中文地址 */
-            getAddress(node) {
-                if (node) {
-                    const index = node.level - 1;
-                    this.address[index] = node.label;
-                }
-                // 为 true 时，执行地图交互
-                if (this.mapLocation) {
-                    this.$emit("callback", {
-                        function: "setMapCenter",
-                        data: {
-                            address: this.address.join("")
-                        }
-                    });
-                }
-            },
-            clear() {
-                this.value = "";
+        methods:{
+            changeValue(value){
+                const join = value.join();
+                this.$emit("update:cityAreaValue",join)
+                console.log(join);
             }
-        },
-        components: {},
-        props: {
-            cityAreaValue: {
-                type: String,
-                default: ""
-            },
-            mapLocation: {
-                type: Boolean,
-                default: false
-            }
-        },
-
+        }
     }
 </script>
-<style lang='scss' scoped>
+
+<style scoped>
+
 </style>
-<!--
-1、组件传入的属性用 props 接收；
-2、this.$emit("update")返向修改，结合组件属性的.sync。
--->
