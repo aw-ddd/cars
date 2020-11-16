@@ -8,3 +8,12 @@ export function GetCity(data = {}) {
         data
     })
 }
+
+/*获取列表数据*/
+export function getListData(params= {}) {
+    return service.request({
+        method:'post',
+        url:params.url,
+        data:params.data
+    })
+}

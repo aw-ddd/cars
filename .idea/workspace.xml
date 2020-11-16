@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="239aab62-8c1b-4df2-a2f2-fdff071584de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cars-admin/src/components/common/tableTem/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cars-admin/src/components/dialog/ShowMapLocation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/$PROJECT_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cars.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/28043.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/28043.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/api/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/api/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/api/parking.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/api/parking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/components/common/cityArea/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/components/common/cityArea/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/views/Parking/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/views/Parking/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/views/Parking/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/views/Parking/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/marker.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cars-admin/src/views/amap/marker.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1gDFInLFafbDKWo7a8u7cXsup0Q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="239aab62-8c1b-4df2-a2f2-fdff071584de" name="Default Changelist" comment="" />
+      <created>1597641178151</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597641178151</updated>
+      <workItem from="1597641181061" duration="578000" />
+      <workItem from="1598258056017" duration="3022000" />
+      <workItem from="1598396294933" duration="2752000" />
+      <workItem from="1598402981646" duration="1688000" />
+      <workItem from="1598414807833" duration="1380000" />
+      <workItem from="1598485004391" duration="817000" />
+      <workItem from="1598488963667" duration="7273000" />
+      <workItem from="1599607307124" duration="1871000" />
+      <workItem from="1599611895894" duration="148000" />
+      <workItem from="1599694478275" duration="477000" />
+      <workItem from="1599724425188" duration="2157000" />
+      <workItem from="1599779214380" duration="1875000" />
+      <workItem from="1599785371900" duration="95000" />
+      <workItem from="1599786939451" duration="4707000" />
+      <workItem from="1602991044697" duration="23000" />
+      <workItem from="1603950412965" duration="961000" />
+      <workItem from="1605533149046" duration="318000" />
+      <workItem from="1605534009908" duration="3251000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1605534627228">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599792170898" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605534627228" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-cars-admin/src/views/Parking/add.vue</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

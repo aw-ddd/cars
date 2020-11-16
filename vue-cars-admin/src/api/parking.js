@@ -7,3 +7,12 @@ export function ParkingAdd(data = {}){
         data
     })
 }
+
+/**遍历停车场列表*/
+export function ParkingList(data = {} ) {
+    return service.request({
+        method:"post",
+        url:'/parking/list/',
+        data
+    })
+}
