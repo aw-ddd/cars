@@ -33,6 +33,10 @@
                     this.$emit('sendLngLat', lngLat)
                     this.marker(lngLat)
                 })
+                //地图初始化完成之后的回调
+                this.map.on('complete',()=>{
+                    this.mapLoad()
+                })
             });
         },
         methods: {
@@ -59,6 +63,11 @@
                     center:[116.404765,39.918052],
                     zoom:this.zoom,//初始化地图层级
                 })
+
+            },
+            //地图加载完成的回调方法
+            mapLoad(){
+                this.$emit('callback',{function:'mapLoad'})
             }
         },
     }

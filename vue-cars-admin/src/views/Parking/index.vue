@@ -63,8 +63,10 @@
                 </template>
             </el-table-column>
             <el-table-column label="操作">
-                <el-button type="danger" size="small">编辑</el-button>
-                <el-button size="small">删除</el-button>
+                <template slot-scope="scope">
+                    <el-button  type="primary" size="small" @click="edit(scope.row)">编辑</el-button>
+                    <el-button size="small" type="danger">删除</el-button>
+                </template>
             </el-table-column>
         </el-table>
         <show-map-location  :obj="obj" ></show-map-location>
@@ -254,6 +256,16 @@
                 this.obj.title =　data.parkingName
                 this.obj.visFlag = true
                 this.obj.data = data
+            },
+            //编辑
+            edit(data){
+                //跳转路由
+                this.$router.push({
+                    name:'ParkingAdd',
+                    query:{
+                        id:data
+                    }
+                })
             }
         },
         //在dom元素渲染之前执行的钩子函数

@@ -23,7 +23,7 @@
 
             <el-form-item label="位置" >
                 <div class="amap-size">
-                    <amap ref="mymap" @sendLngLat="getMapLngLat"></amap>
+                    <amap ref="mymap" @sendLngLat="getMapLngLat" @callback="mapLoad"></amap>
                 </div>
             </el-form-item>
 
@@ -43,7 +43,7 @@
     import CityArea from "../../components/common/cityArea/index";
 
     //方法
-    import {ParkingAdd} from "../../api/parking";
+    import {ParkingAdd, ParkingDetailed} from "../../api/parking";
 
 
     export default {
@@ -74,6 +74,11 @@
                     status:[{required: true, message: '请选择禁启用状态', trigger: ['blur']}],
                     lnglat:[{required: true, message: '请选择停车场位置', trigger: ['blur']}]
                 }
+            }
+        },
+        beforeMount() {
+            if (this.$route.query.id){
+                this.queryById()
             }
         },
         methods: {
@@ -117,7 +122,23 @@
             setMapAddress(data) {
                 // this.form.area = data
                 //定义amap组件的方法
-                this.$refs.mymap.setMyMap(data)
+                // this.$refs.mymap.setMyMap(data)
+            },
+            queryById(){
+                ParkingDetailed(this.$route.query.id).then(res=>{
+                    const data = res.data;
+                    for (let key in data){
+                      if(Object.keys(this.form).includes(key)){//将this.form的所有属性遍历，是否与data中的属性相匹配
+                          this.form[key] = data[key]
+                      }
+                    }
+                    //设置覆盖物
+                    const split = data.lnglat.split(',');
+                    this.$refs.mymap.marker({lng:split[0],lat:split[1]})
+                })
+            },
+            mapLoad(){
+                console.log(1928379127391)
             }
         }
     }

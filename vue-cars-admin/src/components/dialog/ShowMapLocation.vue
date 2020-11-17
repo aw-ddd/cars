@@ -24,7 +24,7 @@
         },
         methods:{
             opened(){
-                this.$refs.amap.mapCreated()
+                this.$refs.amap.mapCreated()              
                 //在dom元素渲染完成之后执行
                 this.$nextTick(()=>{
                     const splice = this.obj.data.lnglat.split(",");
